@@ -3,3 +3,9 @@
   for = "/*"
     [headers.values]
     Access-Control-Allow-Origin = "*"
+[[redirects]]
+  from = "/Api"
+  to = "https://app.ecofleet.com/seeme/"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}

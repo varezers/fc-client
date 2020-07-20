@@ -92,12 +92,23 @@ export default {
 			this.$forceUpdate();
 		},
 		getVehicleLastData() {
+			// const searchParams = String(
+			// 	new URLSearchParams([
+			// 		['key', this.apiKey],
+			// 	])
+			// ) + '&json'
+
+			// this should work on Netlify
+			const endpointUrl = `Api/Vehicles/getLastData?key=${this.apiKey}&json`
+
 			axios.get(
-				'https://stark-thicket-32896.herokuapp.com:8081/api/vehicles/getLastData',
+				endpointUrl,
 				{
-					params: {
-						apiKey: this.apiKey
-					}
+					headers: {
+						'Access-Control-Allow-Origin': '*',
+					},
+					// searchParams,
+					responseType: 'json',
 				}
 			)
 			.then(response => {
@@ -112,15 +123,27 @@ export default {
 			vehicleId
 		) {
 			this.setVehicleDate()
+
+			// const searchParams = String(
+			// 	new URLSearchParams([
+			// 		['key', this.apiKey],
+			// 		['objectId', vehicleId],
+			// 		['begTimestamp', this.selectedVehicleDate.begTimestamp],
+			// 		['endTimestamp', this.selectedVehicleDate.endTimestamp],
+			// 	])
+			// ) + '&json'
+
+			// this should work on Netlify
+			const endpointUrl = `Api/Vehicles/getRawData?key=${this.apiKey}&objectId=${vehicleId}&begTimestamp=${this.selectedVehicleDate.begTimestamp}&endTimestamp=${this.selectedVehicleDate.endTimestamp}&json`
+
 			axios.get(
-				'https://stark-thicket-32896.herokuapp.com:8081/api/vehicles/getRawData',
+				endpointUrl,
 				{
-					params: {
-						apiKey: this.apiKey,
-						objectId: vehicleId,
-						begTimestamp: this.selectedVehicleDate.begTimestamp,
-						endTimestamp: this.selectedVehicleDate.endTimestamp,
-					}
+					headers: {
+						'Access-Control-Allow-Origin': '*',
+					},
+					// searchParams,
+					responseType: 'json',
 				}
 			)
 			.then(response => {
