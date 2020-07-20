@@ -93,7 +93,7 @@ export default {
 		},
 		getVehicleLastData() {
 			axios.get(
-				'http://127.0.0.1:8081/api/vehicles/getLastData',
+				'https://stark-thicket-32896.herokuapp.com:8081/api/vehicles/getLastData',
 				{
 					params: {
 						apiKey: this.apiKey
@@ -113,7 +113,7 @@ export default {
 		) {
 			this.setVehicleDate()
 			axios.get(
-				'http://127.0.0.1:8081/api/vehicles/getRawData',
+				'https://stark-thicket-32896.herokuapp.com:8081/api/vehicles/getRawData',
 				{
 					params: {
 						apiKey: this.apiKey,
