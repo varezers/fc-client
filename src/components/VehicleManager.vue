@@ -92,12 +92,16 @@ export default {
 			this.$forceUpdate();
 		},
 		getVehicleLastData() {
+			const searchParams = String(
+				new URLSearchParams([
+					['key', this.apiKey],
+				])
+			) + '&json'
+
 			axios.get(
 				'https://app.ecofleet.com/seeme/Api/Vehicles/getLastData',
 				{
-					params: {
-						apiKey: this.apiKey
-					}
+					searchParams
 				}
 			)
 			.then(response => {
@@ -112,15 +116,20 @@ export default {
 			vehicleId
 		) {
 			this.setVehicleDate()
+
+			const searchParams = String(
+				new URLSearchParams([
+					['key', this.apiKey],
+					['objectId', vehicleId],
+					['begTimestamp', this.selectedVehicleDate.begTimestamp],
+					['endTimestamp', this.selectedVehicleDate.endTimestamp],
+				])
+			) + '&json'
+
 			axios.get(
 				'https://app.ecofleet.com/seeme/Api/Vehicles/getRawData',
 				{
-					params: {
-						apiKey: this.apiKey,
-						objectId: vehicleId,
-						begTimestamp: this.selectedVehicleDate.begTimestamp,
-						endTimestamp: this.selectedVehicleDate.endTimestamp,
-					}
+					searchParams
 				}
 			)
 			.then(response => {
