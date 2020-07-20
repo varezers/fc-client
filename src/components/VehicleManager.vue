@@ -101,7 +101,8 @@ export default {
 			axios.get(
 				'https://app.ecofleet.com/seeme/Api/Vehicles/getLastData',
 				{
-					searchParams
+					searchParams,
+					responseType: 'json',
 				}
 			)
 			.then(response => {
@@ -129,7 +130,8 @@ export default {
 			axios.get(
 				'https://app.ecofleet.com/seeme/Api/Vehicles/getRawData',
 				{
-					searchParams
+					searchParams,
+					responseType: 'json',
 				}
 			)
 			.then(response => {
