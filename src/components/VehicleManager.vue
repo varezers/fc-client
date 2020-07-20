@@ -93,7 +93,7 @@ export default {
 		},
 		getVehicleLastData() {
 			axios.get(
-				'https://stark-thicket-32896.herokuapp.com:8081/api/vehicles/getLastData',
+				'https://app.ecofleet.com/seeme/Api/Vehicles/getLastData',
 				{
 					params: {
 						apiKey: this.apiKey
@@ -113,7 +113,7 @@ export default {
 		) {
 			this.setVehicleDate()
 			axios.get(
-				'https://stark-thicket-32896.herokuapp.com:8081/api/vehicles/getRawData',
+				'https://app.ecofleet.com/seeme/Api/Vehicles/getRawData',
 				{
 					params: {
 						apiKey: this.apiKey,
