@@ -92,11 +92,11 @@ export default {
 			this.$forceUpdate();
 		},
 		getVehicleLastData() {
-			const searchParams = String(
-				new URLSearchParams([
-					['key', this.apiKey],
-				])
-			) + '&json'
+			// const searchParams = String(
+			// 	new URLSearchParams([
+			// 		['key', this.apiKey],
+			// 	])
+			// ) + '&json'
 
 			// this should work on Netlify
 			const endopointUrl = `https://app.ecofleet.com/seeme/Api/Vehicles/getLastData?key=${this.apiKey}&json`
@@ -121,14 +121,14 @@ export default {
 		) {
 			this.setVehicleDate()
 
-			const searchParams = String(
-				new URLSearchParams([
-					['key', this.apiKey],
-					['objectId', vehicleId],
-					['begTimestamp', this.selectedVehicleDate.begTimestamp],
-					['endTimestamp', this.selectedVehicleDate.endTimestamp],
-				])
-			) + '&json'
+			// const searchParams = String(
+			// 	new URLSearchParams([
+			// 		['key', this.apiKey],
+			// 		['objectId', vehicleId],
+			// 		['begTimestamp', this.selectedVehicleDate.begTimestamp],
+			// 		['endTimestamp', this.selectedVehicleDate.endTimestamp],
+			// 	])
+			// ) + '&json'
 
 			// this should work on Netlify
 			const endpointUrl = `https://app.ecofleet.com/seeme/Api/Vehicles/getRawData?key=${this.apiKey}&objectId=${objectId}&begTimestamp=${this.selectedVehicleDate.begTimestamp}&endTimestamp=${this.selectedVehicleDate.endTimestamp}&json`
