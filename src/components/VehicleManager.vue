@@ -98,10 +98,13 @@ export default {
 				])
 			) + '&json'
 
+			// this should work on Netlify
+			const endopointUrl = `https://app.ecofleet.com/seeme/Api/Vehicles/getLastData?key=${this.apiKey}&json`
+
 			axios.get(
-				'https://app.ecofleet.com/seeme/Api/Vehicles/getLastData',
+				endpointUrl,
 				{
-					searchParams,
+					// searchParams,
 					responseType: 'json',
 				}
 			)
@@ -127,10 +130,13 @@ export default {
 				])
 			) + '&json'
 
+			// this should work on Netlify
+			const endpointUrl = `https://app.ecofleet.com/seeme/Api/Vehicles/getRawData?key=${this.apiKey}&objectId=${objectId}&begTimestamp=${this.selectedVehicleDate.begTimestamp}&endTimestamp=${this.selectedVehicleDate.endTimestamp}&json`
+
 			axios.get(
-				'https://app.ecofleet.com/seeme/Api/Vehicles/getRawData',
+				endpointUrl,
 				{
-					searchParams,
+					// searchParams,
 					responseType: 'json',
 				}
 			)
