@@ -104,6 +104,9 @@ export default {
 			axios.get(
 				endpointUrl,
 				{
+					headers: {
+						'Access-Control-Allow-Origin': '*',
+					},
 					// searchParams,
 					responseType: 'json',
 				}
@@ -136,6 +139,9 @@ export default {
 			axios.get(
 				endpointUrl,
 				{
+					headers: {
+						'Access-Control-Allow-Origin': '*',
+					},
 					// searchParams,
 					responseType: 'json',
 				}
