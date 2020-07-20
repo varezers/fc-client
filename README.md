@@ -1,4 +1,4 @@
-# fleet-complete
+# fc-client
 
 ## Project setup
 ```

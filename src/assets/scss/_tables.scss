@@ -1,0 +1,38 @@
+.m-table {
+	border: 1px solid #666666;
+	display: block;
+}
+
+.m-table + .m-table {
+	margin-top: $spacing;
+}
+
+.m-table-row {
+	&:nth-child(even) {
+		background: darken(#ffffff, 20%)
+	}
+
+	&:hover {
+		background-color: #B0E0E6;
+	}
+
+	&__title {
+		font-weight: bolder;
+	}
+
+	&__cell {
+		padding: $spacing-smaller;
+
+		&__name {
+			text-align: left;
+		}
+
+		&__value {
+			text-align: right;
+		}
+	}
+
+	&__cell + &__cell{
+		border-left: $border;
+	}
+}

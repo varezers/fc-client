@@ -1,0 +1,7 @@
+.alert {
+	&--error {
+		font-weight: bolder;
+		color: $font-color-warning;
+		padding: 0 $spacing-smaller;
+	}
+}
