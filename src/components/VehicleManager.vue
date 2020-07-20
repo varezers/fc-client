@@ -99,7 +99,7 @@ export default {
 			// ) + '&json'
 
 			// this should work on Netlify
-			const endpointUrl = `Api/Vehicles/getLastData?key=${this.apiKey}&json`
+			const endpointUrl = `https://app.ecofleet.com/seeme/Api/Vehicles/getLastData?key=${this.apiKey}&json`
 
 			axios.get(
 				endpointUrl,
@@ -134,7 +134,7 @@ export default {
 			// ) + '&json'
 
 			// this should work on Netlify
-			const endpointUrl = `Api/Vehicles/getRawData?key=${this.apiKey}&objectId=${vehicleId}&begTimestamp=${this.selectedVehicleDate.begTimestamp}&endTimestamp=${this.selectedVehicleDate.endTimestamp}&json`
+			const endpointUrl = `https://app.ecofleet.com/seeme/Api/Vehicles/getRawData?key=${this.apiKey}&objectId=${vehicleId}&begTimestamp=${this.selectedVehicleDate.begTimestamp}&endTimestamp=${this.selectedVehicleDate.endTimestamp}&json`
 
 			axios.get(
 				endpointUrl,
